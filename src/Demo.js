@@ -17,18 +17,18 @@ import React, { useCallback, useMemo } from 'react';
 import RequestAirdrop from './RequestAirdrop';
 import SendTransaction from './SendTransaction';
 import InitializeAccount from './InitializeAccount';
-import CallDummy from './callDummy';
+import Dummy from './Dummy';
 
 export const Demo = () => {
     // const endpoint = useMemo(() => clusterApiUrl('devnet'), []);
     // clusterApiUrl returns a string.
-    const endpoint = "http://localhost:8899";
+    const endpoint = "http://127.0.0.1:8899";
     const [autoConnect, setAutoConnect] = useLocalStorage('autoConnect', false);
 
     const wallets = useMemo(
         () => [
             getPhantomWallet(),
-            getSolletWallet(),
+            getSolletWallet({ network: endpoint }),
         ],
         []
     );
@@ -97,7 +97,7 @@ export const Demo = () => {
                             <TableRow>
                                 <TableCell>
                                     <InitializeAccount />
-                                    <CallDummy />
+                                    <Dummy />
                                 </TableCell>
                             </TableRow>
                         </TableBody>

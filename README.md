@@ -1,5 +1,13 @@
-`callDummy` is the POC that works with phantom now. Read a dummy anchor contract. (`set-read` is the anchor contract.)
+`callDummy` is the POC that works with all solana wallet adapters. This calls a normal dummy anchor program that logs "Called Dummy" with `msg!()`
 
+---
+Currently this example works with Phantom and Sollet.
+
+>To Add different wallets to this add them in the `wallets` array in the `Demo.js`.
+
+---
+
+To use the `dummy` isntruction call. Deploy the program given in `solana_program` using `solana deploy` and store this address in `ProgramId` in `Dummy.js`
 
 ---
 

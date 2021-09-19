@@ -1,9 +1,9 @@
 import { Button } from '@material-ui/core';
 import { useWallet, useConnection } from '@solana/wallet-adapter-react';
 // import { Keypair, SystemProgram, Transaction, Connection } from '@solana/web3.js';
-import { Program, web3, Provider } from '@project-serum/anchor';
+import { Program, Provider } from '@project-serum/anchor';
 // import { Provider } from "@project-serum/common";
-import Wallet from "@project-serum/sol-wallet-adapter";
+// import Wallet from "@project-serum/sol-wallet-adapter";
 import React, { useCallback } from 'react';
 import { useNotify } from './notify';
 import * as idl from './idl.json';
@@ -21,7 +21,7 @@ const InitializeAccount = () => {
     // const wallet = new Wallet(adapter)
     // const wallet = new Wallet("https://sollet.io", "http://localhost:8899")
     const provider = new Provider(connection, wallets[0], opts);
-    console.log(provider);
+    // console.log(provider);
 
     const program = new Program(idl.default, "6FZKYLfT1tUPN5CuyqUNWREcr3utyvbn5LR5urSpTqFe", provider);
     // console.log(program);
